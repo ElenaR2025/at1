@@ -1,3 +1,147 @@
 body { font-family: Arial, sans-serif; padding: 20px; }
 .question, .answer { margin: 20px; font-size: 20px; }
 #revealBtn { margin: 20px; font-size: 16px; cursor: pointer; }
+
+.section {
+    text-align: center;
+    border: 1px;
+    border-color: black;
+    
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: #E79482;
+    color: #fff;
+    position: fixed; /* Position the navbar relative to the viewport */
+    top: 0; /* Align the top edge of the navbar with the top edge of the viewport */
+    width: 100%; /* Occupy the entire width of the viewport */
+    overflow: hidden;
+    z-index: 1000; /
+    
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right:20px;
+}
+nav ul li:last-child {
+    margin-right: 0; /* Remove margin from the last list item */
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center the list items */
+}
+
+
+nav ul li a {
+    display: inline-block;
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+.content {
+    text-align: center;
+    padding: 50px;
+}
+.flashcard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.flashcard {
+    width: 400px;
+    height: 200px;
+    perspective: 1000px; /* Adjust the perspective to change the depth effect */
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    transition: transform 0.5s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow to create depth */
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.flipped .front {
+    transform: rotateY(-180deg);
+}
+
+.flipped .back {
+    transform: rotateY(0deg);
+}
+
+footer {
+    background-color: #E79482;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed; /* Position the footer relative to the viewport */
+    bottom: 0; /* Align the bottom edge of the footer with the bottom edge of the viewport */
+    width: 100%; /* Occupy the entire width of the viewport */
+   
+}
+
+.footer-content {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-content ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.footer-content ul li:last-child {
+    margin-right: 0;
+}
+
+.footer-content ul li a {
+    color: #fff;
+    text-decoration: none;
+}

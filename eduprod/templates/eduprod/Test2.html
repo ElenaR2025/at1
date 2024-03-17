@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>3-Section Webpage</title>
+    <link href="{% static 'eduprod/styles.css' %}" rel="stylesheet">
+    <script src="{% static 'eduprod/scripts.js' %}" defer></script>
+</head>
+<body>
+        <header>
+            <div class="container"> <!-- Container for the header content -->
+                <img src="your-logo.png" alt="Your Logo" class="logo"> <!-- Logo image -->
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="container" id="navbar"> <!-- Container for the main content -->
+                <section class="section">
+                    <!-- Content for the first section goes here -->
+                    <div class="flashcard-container">
+                        <div class="flashcard">
+                            <div class="front">
+                                <h2>Front of Card 1</h2>
+                                <button class="flip-button" onclick="flipCard(this)">Flip</button>
+                            </div>
+                            <div class="back">
+                                <h2>Back of Card 1</h2>
+                                <button class="flip-button" onclick="flipCard(this)">Flip</button>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <script>
+                        function flipCard(button) {
+                            var card = button.parentNode.parentNode;
+                            card.classList.toggle('flipped');
+                        }
+                    </script>
+                </section>
+                <section class="section">
+                    <!-- Content for the second section goes here -->
+                </section>
+                <section class="section">
+                   <!-- Content for the third section goes here -->
+                </section>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="container"> <!-- Container for the footer content -->
+                <a href="#" class="button">Contact Us</a> <!-- Button for contact -->
+            </div>
+        </footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Example Website</p>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <!-- Including the JavaScript file using Django template syntax -->
+        
+    </body>
+</html>
