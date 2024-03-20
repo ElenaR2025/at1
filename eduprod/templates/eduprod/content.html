@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <title>3-Section Webpage</title>
-    <link href="{% static 'eduprod/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'eduprod/content.css' %}" rel="stylesheet">
     <script src="{% static 'eduprod/scripts.js' %}" defer></script>
 </head>
 <body>
@@ -14,8 +14,8 @@
         </header>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="{% url 'content' %}">Content</a></li>
+                <li><a href="{% url 'Test2' %}">Home</a></li>
+                <li><a href="#">Content</a></li>
                 <li><a href="{% url 'Revision' %}">Revision</a></li>
                 <li><a href="#">Results</a></li>
             </ul>
@@ -23,32 +23,21 @@
         <main>
             <div class="container" id="navbar"> <!-- Container for the main content -->
                 <section class="section">
-                    <!-- Content for the first section goes here -->
-                    <div class="flashcard-container">
-                        <div class="flashcard">
-                            <div class="front">
-                                <h2>Front of Card 1</h2>
-                                <button class="flip-button" onclick="flipCard(this)">Flip</button>
-                            </div>
-                            <div class="back">
-                                <h2>Back of Card 1</h2>
-                                <button class="flip-button" onclick="flipCard(this)">Flip</button>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <script>
-                        function flipCard(button) {
-                            var card = button.parentNode.parentNode;
-                            card.classList.toggle('flipped');
-                         src="{% static 'js/scripts.js' %}"
-                        }
-                    </script>
-                    <button id="prevBtn">Previous</button>
-                    <button id="nextBtn">Next</button>
+
+                        </section>
+                   </div>  
+                                  
+                    <script src="{% static 'contentscript.js' %}"></script>
+
+                 
+
+                      
                 </section>
                 <section class="section">
-                    <!-- Content for the second section goes here -->
+                    <div class="text-box"> 
+                        <section class="section">
+                                <h2>Phonetic Alphabet</h2>
+                                <p>A- ALPHA</p><!-- Content for the second section goes here -->
                 </section>
                 <section class="section">
                    <!-- Content for the third section goes here -->
@@ -61,7 +50,7 @@
                 <a href="#" class="button">Contact Us</a> <!-- Button for contact -->
             </div>
             <div class="footer-content">
-                <p>&copy; 2024 PHSACU </p>
+                <p>&copy; 2024 TPHSACU </p>
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Revision</a></li>

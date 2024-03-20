@@ -1,7 +1,15 @@
-from django.urls import path
+from django.urls import path, include 
 from . import views
+from . import admin
+
+
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('test/', views.test, name='test')
+    path('Test2/', views.Test2, name='Test2'),
+    path ('content/', views.content, name='content'),
+    path ('Revision/', views.content, name= "Revision")
+    
+
+   
 ]

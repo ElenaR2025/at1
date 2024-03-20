@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             btn.style.display = "none";
         }
     }
-
+s
     displayQuestion();
 
     btn.addEventListener("click", function() {
@@ -29,3 +29,24 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+   
+
+    function  showCard(index) {
+        flashcards.forEach(card => card.classList.remove('active'));
+        flashcards[index].classList.add('active');
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', function() {
+        currentCardIndex = (currentCardIndex === 0) ? flashcards.length - 1 : currentCardIndex - 1;
+        showCard(currentCardIndex);
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', function() {
+        currentCardIndex = (currentCardIndex === flashcards.length - 1) ? 0 : currentCardIndex + 1;
+        showCard(currentCardIndex);
+    });
+
+    // Show the first card initially
+    showCard(currentCardIndex);
+
+

@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 
-
 def register_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -12,8 +11,7 @@ def register_view(request):
             return redirect('login')
     else:
         form = UserCreationForm()
-        
-    return render(request, 'users/register.html', {'form': form})
+    return render(request, 'registration/register.html', {'form': form})
 
 def login_view(request):
     if request.method == 'POST':
@@ -25,24 +23,13 @@ def login_view(request):
             return redirect('dashboard')
     else:
         form = AuthenticationForm()
-    return render(request, 'users/login.html', {'form': form})
+    return render(request, 'registration/login.html', {'form': form})
 
 def logout_view(request):
     logout(request)
     # Redirect to login page after logout
     return redirect('login')
 
-def dashboard(request):
+def dashboard_view(request):
     # Code to render dashboard page
-    return render(request, 'users/dashboard.html')
-
-def views(request):
-    # Code to render dashboard page
-    return render(request, 'users/dashboard.html')
-
-
-
-
-
-
-
+    return render(request, 'dashboard.html')
