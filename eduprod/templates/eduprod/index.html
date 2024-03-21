@@ -1,5 +1,48 @@
 {% extends "eduprod/layout.html" %}
 {% block body %}
-<div id="content" data-questions='{{ questions_json|safe }}'></div>
-<button id="revealBtn">Reveal Answer</button> 
+<!--<div id="content" data-questions='{{ questions_json|safe }}'></div>
+<button id="revealBtn">Reveal Answer</button> -->
+
+<main>
+    <div class="container" id="navbar"> <!-- Container for the main content -->
+        <section class="section">
+            <!-- Content for the first section goes here -->
+            <div class="flashcard-container">
+                <div class="flashcard">
+                    <div class="front">
+                        <h2>Front of Card 1</h2>
+                        
+                        <button class="flip-button" onclick="flipCard(this)">Flip</button>
+                    </div>
+                    <div class="back">
+                        <h2>Back of Card 1</h2>
+                        <button class="flip-button" onclick="flipCard(this)">Flip</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <button id="prevBtn">Previous</button>
+            <button id="nextBtn">Next</button>
+        </section>
+        <section class="section">
+            <!-- Content for the second section goes here -->
+        </section>
+        <section class="section">
+           <!-- Content for the third section goes here -->
+        </section>
+
+        <script>
+            function flipCard(button) {
+                var card = button.parentNode.parentNode;
+                card.classList.toggle('flipped');
+     
+    }
+        </script>
+    </div>
+</main>
+
+
+
+
+
 {% endblock %}

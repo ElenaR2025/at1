@@ -49,4 +49,12 @@ s
     // Show the first card initially
     showCard(currentCardIndex);
 
+    function flipCard(button) {
+        var card = button.parentNode.parentNode;
+        card.classList.toggle('flipped');
+   
+     
+    }
+    
+
 
