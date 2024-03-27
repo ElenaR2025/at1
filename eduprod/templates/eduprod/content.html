@@ -14,10 +14,20 @@
         </header>
         <nav>
             <ul>
-                <li><a href="{% url 'Test2' %}">Home</a></li>
-                <li><a href="#">Content</a></li>
-                <li><a href="{% url 'Revision' %}">Revision</a></li>
+                <li><a href="{% url 'eduprod:Test2' %}">Home</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown()">Content</a>
+                <div id="myDropdown" class="dropdown-content">
+                 <a href="#">Sublink 1</a>
+                 <a href="#">Sublink 2</a>
+                <a href="#">Sublink 3</a>
+    </div>
+                </li>
+               
+            
+                <li><a href="{% url 'eduprod:Revision' %}">Revision</a></li>
                 <li><a href="#">Results</a></li>
+                <li><a href="{% url 'login' %}">Logout</a></li>
             </ul>
         </nav>
         <main>

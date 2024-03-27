@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <title>3-Section Webpage</title>
-    <link href="{% static 'eduprod/Revision.css' %}" rel="stylesheet">
+    <link href="{% static 'eduprod/styles.css' %}" rel="stylesheet">
     <script src="{% static 'eduprod/scripts.js' %}" defer></script>
 </head>
 <body>
@@ -14,32 +14,67 @@
         </header>
         <nav>
             <ul>
-                <li><a href="{% url 'Test2' %}">Home</a></li>
-                <li><a href="{% url 'content' %}">Content</a></li>
-                <li><a href="#">Revision</a></li>
+                <li><a href="{%url 'eduprod:Test2'%}">Home</a></li>
+                <li><a href="{% url 'eduprod:content' %}">Content</a></li>
+                <li><a href="{% url 'eduprod:Revision' %}">Revision</a></li>
                 <li><a href="#">Results</a></li>
+                <li><a href="{% url 'login' %}">Logout</a></li>
             </ul>
         </nav>
         <main>
             <div class="container" id="navbar"> <!-- Container for the main content -->
                 <section class="section">
-                    
-                    
-                
-                    <script src="{% static 'contentscript.js' %}"></script>
+                    <!-- Content for the first section goes here -->
+                    <div class="flashcard-container">
+                        <div class="flashcard">
+                            <div class="front">
+                                <h2>Welcome to Revision</h2>
+                                <button class="flip-button" onclick="flipCard(this)">Click to begin</button>
+                            </div>
+                            <div class="back">
+                                <h2>Phonetic Alphabet</h2>
+                                <button id="startQuiz"onclick="startQuiz()">Start</button>
+                                <div id="quiz-container" style="display:none;">
+                                    {% for question in questions %}
+                                        <div class="question">
+                                            <p><strong>Question:</strong> {{ question.text }}</p>
+                                            <button onclick="showAnswer(this)">Show Answer</button>
+                                            <p class="answer" style="display:none;"><strong>Answer:</strong> {{ question.answer }}</p>
+                                        </div>
+                                    {% endfor %}
+                            </div>
+                        </div>
+                        <body>
 
+                            
+                        </body>
+                    </div>
+                    </div>
+                    <script>
+                        var currentQuestionIndex = 0;
+                        var questions = document.getElementsByClassName('question');
 
-                        <p></p>
-                    <p>hello</p>
-                     <button id="prevBtn">Previous</button>
-                    <button id="nextBtn">Next</button>
-                </section>
-                <section class="section">
-                    <!-- Content for the second section goes here -->
-                </section>
-                <section class="section">
-                   <!-- Content for the third section goes here -->
-                </section>
+    function startQuiz() {
+        document.querySelector('.flashcard').style.display = 'none';
+        document.getElementById('quiz-container').style.display = 'block';
+        showCurrentQuestion();
+    }
+
+    function showCurrentQuestion() {
+        if (currentQuestionIndex < questions.length) {
+            questions[currentQuestionIndex].style.display = 'block';
+        } else {
+            alert('Quiz finished!');
+        }
+    }
+
+    function showAnswer(button) {
+        var answer = button.nextElementSibling;
+        answer.style.display = 'block';
+        button.style.display = 'none';
+    }
+                    </script>
+                  
             </div>
         </main>
         
@@ -48,7 +83,7 @@
                 <a href="#" class="button">Contact Us</a> <!-- Button for contact -->
             </div>
             <div class="footer-content">
-                <p>&copy; 2024 TPHSACU </p>
+                <p>&copy; 2024 PHSACU </p>
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Revision</a></li>

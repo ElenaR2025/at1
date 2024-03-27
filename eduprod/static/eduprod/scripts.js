@@ -55,6 +55,18 @@ s
    
      
     }
-    
+    function showCurrentQuestion() {
+    // Hide all questions
+    for (var i = 0; i < questions.length; i++) {
+        questions[i].style.display = 'none';
+    }
 
+    // Show the current question
+    if (currentQuestionIndex < questions.length) {
+        questions[currentQuestionIndex].style.display = 'block';
+        currentQuestionIndex++;  // Increment the index for the next question
+    } else {
+        alert('Quiz finished!');
+    }
+}
 

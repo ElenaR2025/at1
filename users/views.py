@@ -8,7 +8,7 @@ from django.contrib import messages
 def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("users:login"))
-    return render(request, "users/user.html")
+    return render(request, "eduprod/Test2.html")
 
 def login_view(request):
     if request.method == "POST":
@@ -17,7 +17,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("users:index"))
+            return HttpResponseRedirect(reverse("eduprod:Test2"))
         else:
             messages.success(request, "Invalid Credentials.")
             return redirect(reverse('users:login'))

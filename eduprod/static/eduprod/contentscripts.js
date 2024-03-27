@@ -1,6 +1,6 @@
 function toggleDropdown() {
     var dropdown = document.getElementById("myDropdown");
-    dropdown.classList.toggle("show");
+    
 }
 
 // Close the dropdown if the user clicks outside of it
