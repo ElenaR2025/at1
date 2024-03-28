@@ -16,6 +16,14 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="{% url 'eduprod:content' %}">Content</a></li>
+                <li class="dropdown"><a>Content</a>
+                    <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+                    </li>
+                
                 <li><a href="{% url 'eduprod:Revision' %}">Revision</a></li>
                 <li><a href="#">Results</a></li>
                 <li><a href="{% url 'login' %}">Logout</a></li>

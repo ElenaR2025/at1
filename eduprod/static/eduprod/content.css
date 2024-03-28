@@ -24,7 +24,7 @@ nav {
     top: 0; /* Align the top edge of the navbar with the top edge of the viewport */
     width: 100%; /* Occupy the entire width of the viewport */
     overflow: hidden;
-    z-index: 1000; 
+    z-index: 1; 
     
 }
 
@@ -42,12 +42,6 @@ nav ul li {
 nav ul li:last-child {
     margin-right: 0; /* Remove margin from the last list item */
 }
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center; /* Center the list items */
-}
 
 
 nav ul li a {
@@ -59,6 +53,30 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #555;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f00e0e;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .text-box {
@@ -79,56 +97,8 @@ nav ul li a:hover {
     box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
 
-.dropbtn {
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    background-color: inherit; /* Match the navbar background color */
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41; /* Change as needed */
-}
-
-
-.show { display:block;}
-
-
-
-
-
-
+ 
 
 footer {
     background-color: #E79482;
