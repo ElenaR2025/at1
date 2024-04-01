@@ -4,7 +4,7 @@
 <head>
     <title>3-Section Webpage</title>
     <link href="{% static 'eduprod/styles.css' %}" rel="stylesheet">
-    <script src="{% static 'eduprod/scripts.js' %}" defer></script>
+    <script src="{% static 'eduprod/test.js' %}" defer></script>
 </head>
 <body>
         <header>
@@ -14,7 +14,7 @@
         </header>
         <nav>
             <ul>
-                <li><a href="{%url 'eduprod:Test2'%}">Home</a></li>
+                <li><a href="{%url 'eduprod:Home'%}">Home</a></li>
                 <li><a href="{% url 'eduprod:content' %}">Content</a></li>
                 <li><a href="{% url 'eduprod:Revision' %}">Revision</a></li>
                 <li><a href="#">Results</a></li>

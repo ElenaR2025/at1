@@ -1,6 +1,4 @@
-{% load static %}
-              
-                  
+{%load static%}                
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +8,20 @@
     </head>
        <header>
             <div class="container"> <!-- Container for the header content -->
-               
+              </div> 
         
         <nav>
             <ul>
-                <li><a href="{% url 'eduprod:Test2' %}">Home</a></li>
+                <li><a href="{% url 'eduprod:Home'%}">Home</a></li>
                 <li class="dropdown">
-                    <a href="{% url 'eduprod:content' %}">Content</a>
-                    <div class="dropdown-content">
-                        <a href="page1.html">Page 1</a>
-                        <a href="page2.html">Page 2</a>
-                        <a href="page3.html">Page 3</a>
-                        </div>
+                    
+                    <button class="dropbtn">Content 
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                      </div>
                     </li>
                      <li><a href="{% url 'eduprod:Revision' %}">Revision</a></li>
                      <li><a href="#">Results</a></li>
@@ -35,10 +35,6 @@
 
                         </section>
                    </div>  
-                                  
-                    
-                 
-
                       
                 </section>
                 <section class="section">

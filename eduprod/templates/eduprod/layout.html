@@ -2,25 +2,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Q&A</title>
-    <link href="{% static 'eduprod/styles.css' %}" rel="stylesheet">
-    <script src="{% static 'eduprod/scripts.js' %}" defer></script>
+    
+    <link href="{% static 'eduprod/content.css' %}" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container"> <!-- Container for the header content -->
             <img src="your-logo.png" alt="Your Logo" class="logo"> <!-- Logo image -->
         </div>
-    </header>
+    
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="{% url 'eduprod:content' %}">Content</a></li>
-            <li><a href="{% url 'eduprod:Revision' %}">Revision</a></li>
-            <li><a href="#">Results</a></li>
-            <li><a href="{% url 'login' %}">Logout</a></li>
-        </ul>
+            <li><a href="{% url 'eduprod:Home'%}">Home</a></li>
+            <li class="dropdown">
+                
+                <button class="dropbtn">Content
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+                </li>
+                 <li><a href="{% url 'eduprod:Revision' %}">Revision</a></li>
+                 <li><a href="#">Results</a></li>
+                 <li><a href="{% url 'login' %}">Logout</a></li>    
+         </ul>
     </nav>
+</header>
 
     {% block body %}
     {% endblock %}

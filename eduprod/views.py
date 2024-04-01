@@ -15,8 +15,8 @@ def index(request):
     questions_json = serializers.serialize('json', questions)
     return render(request, 'eduprod/index.html', {'questions_json': questions_json})
 
-def Test2(request):
-    return render(request, 'eduprod/Test2.html')
+def Home(request):
+    return render(request, 'eduprod/Home.html')
 
 def dashboard(request):
     return render(request, 'users/dashboard.html')
@@ -42,3 +42,15 @@ def revision_view(request):
 
 def my_view(request):
     return render(request, 'content.html')
+
+def testquiz(request):
+    return render(request, 'eduprod/testquiz.html')
+
+def Quiz(request):
+    return render(request, 'eduprod/Quiz.html' )
+
+def layout(request):
+    return render(request, 'eduprod/layout.html')
+
+def index(request):
+    return render(request, 'eduprod/index.html')

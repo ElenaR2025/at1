@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset= "UTF-8">
+    <meta name="viewport"content="width=device-width, intiial-scale =1.0">
+<title> Matching Words to their Phonetic Leter</title>
+<link href="{% static 'eduprod/index.css' %}" rel="stylesheet">
+<link href="{% static 'eduprod/Quiz.css' %}" rel="stylesheet">
+
+</head>
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="{% url 'eduprod:content' %}">Content</a></li>
+        <li><a href="{% url 'eduprod:Revision' %}">Revision</a></li>
+        <li><a href="#">Results</a></li>
+        <li><a href="{% url 'login' %}">Logout</a></li>
+    </ul>
+</nav>
+<body>
+<br>
+<br>
+<div class = "container">
+    <div id="words">
+        <div class="word" draggable="true" ondragstart="drag(event)">Alpha</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">Charlie</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">Bravo</div>
+    </div>
+    <div id ="descriptions">
+        <div class = "description" data-word ="Alpha" ondrop="drop(event)" ondragover="allowDrop(event)">Meaning of A
+        <p class ="message"></p>
+        <P class="dropped-word"></P>
+        </div>
+        <div class = "description" data-word ="Bravo" ondrop="drop(event)" ondragover="allowDrop(event)">Meaning of B
+            <p class ="message"></p>
+            <P class="dropped-word"></P>
+        </div>
+        <div class = "description" data-word ="Charlie" ondrop="drop(event)" ondragover="allowDrop(event)">Meaning of C
+            <p class ="message"></p>
+            <P class="dropped-word"></P>
+        </div>
+    </div>
+</div>
+<script src="{% static 'eduprod/Quiz.js' %}" ></script>
+
+
+<button class="reset" onclick="resetGame()" style="margin-top: 20px; width: 200px; color: blueviolet; background-color: white; border: 4px solid blueviolet;border-style: dashed;font-family: fantasy; font-size:20px;padding:  5px; transition: all 0.3s;position:absolute;top:75%;right:100px">Reset Game</button>
+
+<script src="{% static 'eduprod/Quiz.js' %}" ></script>
+
+<footer>
+    <div class="container"> <!-- Container for the footer content -->
+        <a href="#" class="button">Contact Us</a> <!-- Button for contact -->
+    </div>
+    <div class="footer-content">
+        <p>&copy; 2024 PHSACU </p>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Revision</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    
+</footer>
+</body>
+</html>
+
