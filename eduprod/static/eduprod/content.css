@@ -60,6 +60,19 @@ nav ul li a:hover {
     text-decoration: none;
   }
   
+  .logout {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #375137;
+    border: 1px solid #375137;
+    margin-right: 5px;
+}
+
+.logout:hover {
+    background-color: #555;
+}
  
   
   .dropdown .dropbtn {
@@ -93,6 +106,7 @@ nav ul li a:hover {
     text-decoration: none;
     display: block;
     text-align: left;
+    overflow: show;
   }
   
   .dropdown-content a:hover {

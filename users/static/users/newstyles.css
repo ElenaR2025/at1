@@ -1,0 +1,103 @@
+nav {
+    background-color: #E79482;
+    color: #fff;
+    position: absolute; /* Position the navbar relative to the viewport */
+    top: 0; /* Align the top edge of the navbar with the top edge of the viewport */
+    width: 100%; /* Occupy the entire width of the viewport */
+    overflow: visible;
+    z-index: 1;
+   
+    
+}
+  
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+nav ul li {
+    display: inline-block;
+    margin-right:20px;
+}
+nav ul li:last-child {
+    margin-right: 0; /* Remove margin from the last list item */
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #6b0707;
+}
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: rgb(147, 23, 23);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+.login-container {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 40px;
+    background: #b26b6b;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    perspective: 1000px;
+    margin: auto;
+}
+
+.login-container form {
+    transform: rotateY(20deg);
+    transition: transform 0.5s;
+}
+
+.login-container:hover form {
+    transform: rotateY(0deg);
+}
+
+.input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    background: #f2f2f2;
+    border-radius: 5px;
+    outline: none;
+}
+
+.input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #8f3636;
+    color: #6d2222;
+    cursor: pointer;
+    border-radius: 5px;
+   
+}
+
+.input[type="submit"]:hover {
+    background: #ab3737;
+}
+
+.container {
+    width: 75%; 
+    margin: 50px auto; 
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-height: 100%; 
+    overflow-y: auto; 
+    background-color: #ececec;
+    border-radius: 0px;
+}
