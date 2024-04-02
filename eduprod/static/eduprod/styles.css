@@ -1,5 +1,5 @@
 .question, .answer { margin: 20px; font-size: 20px; }
-#revealBtn { margin: 20px; font-size: 16px; cursor: pointer; }
+#revealBtn3 { margin: 20px; font-size: 16px; cursor: pointer; }
 
 
 .flashcard-container {
@@ -41,6 +41,7 @@
 .flipped .back {
     transform: rotateY(0deg);
 }
+
 
 
 

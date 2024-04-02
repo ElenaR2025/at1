@@ -1,26 +1,11 @@
+{% extends "eduprod/layout.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>3-Section Webpage</title>
+{% block body %}
+
+
     <link href="{% static 'eduprod/styles.css' %}" rel="stylesheet">
     <script src="{% static 'eduprod/test.js' %}" defer></script>
-</head>
-<body>
-        <header>
-            <div class="container"> <!-- Container for the header content -->
-                <img src="your-logo.png" alt="Your Logo" class="logo"> <!-- Logo image -->
-            </div>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="{%url 'eduprod:Home'%}">Home</a></li>
-                <li><a href="{% url 'eduprod:content' %}">Content</a></li>
-                <li><a href="{% url 'eduprod:Revision' %}">Revision</a></li>
-                <li><a href="#">Results</a></li>
-                <li><a href="{% url 'login' %}">Logout</a></li>
-            </ul>
-        </nav>
+
         <main>
             <div class="container" id="navbar"> <!-- Container for the main content -->
                 <section class="section">
@@ -78,22 +63,12 @@
             </div>
         </main>
         
-        <footer>
-            <div class="container"> <!-- Container for the footer content -->
-                <a href="#" class="button">Contact Us</a> <!-- Button for contact -->
-            </div>
-            <div class="footer-content">
-                <p>&copy; 2024 PHSACU </p>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Revision</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
             
-        </footer>
+     
         
         <!-- Including the JavaScript file using Django template syntax -->
         
     </body>
 </html>
+{% endblock %}
+
