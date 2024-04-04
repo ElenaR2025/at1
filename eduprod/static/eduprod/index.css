@@ -66,29 +66,7 @@ nav ul li a:hover {
     padding: 50px;
 }
 
-.dropdown{
-    position:relative;
 
-}
-.dropdown-content{
-display:none;
-position: absolute;
-background-color: #555;
-width: 100%;
-z-index: 1;
-
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-content a {
-    color: #ccc;
-    padding: 10px;
-    text-decoration: none;
-    display:block;
-}
   
 footer {
     background-color: #E79482;

@@ -10,10 +10,7 @@ def Revision(request):
     return render(request, 'eduprod/Revision.html')
 
 @login_required
-def index(request):
-    questions = Question.objects.all()
-    questions_json = serializers.serialize('json', questions)
-    return render(request, 'eduprod/index.html', {'questions_json': questions_json})
+
 
 def Home(request):
     return render(request, 'eduprod/Home.html')
@@ -43,8 +40,6 @@ def revision_view(request):
 def my_view(request):
     return render(request, 'content.html')
 
-def testquiz(request):
-    return render(request, 'eduprod/testquiz.html')
 
 def Quiz(request):
     return render(request, 'eduprod/Quiz.html' )
