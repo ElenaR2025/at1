@@ -1,53 +1,40 @@
-{% extends "eduprod/layout.html" %}
-{% load static %}
-{% block body %}
-
-
+{% extends "eduprod/layout.html" %} <!-- Extends the base layout from "eduprod/layout.html" -->
+{% load static %} <!-- Load the static files tag from Django -->
+{% block body %} <!-- Start of the block that will be inserted into the base layout -->
 
 <head>
-
-    <title>3-Section Webpage</title>
-    <link href="{% static 'eduprod/styles.css' %}" rel="stylesheet">
-    <script src="{% static 'eduprod/scripts.js' %}" defer></script>
+    <title>3-Section Webpage</title> <!-- Title of the webpage -->
+    <link href="{% static 'eduprod/styles.css' %}" rel="stylesheet"> <!-- Link to the CSS stylesheet -->
+    <script src="{% static 'eduprod/scripts.js' %}" defer></script> <!-- Link to the JavaScript file with defer attribute -->
 </head>
 <body>
-        
-        
-        <main>
-            <div class="container" id="navbar"> <!-- Container for the main content -->
-                <section class="section">
-                    <!-- Content for the first section goes here -->
-                    <div class="flashcard-container">
-                        <div class="flashcard">
-                            <div class="front">
-                                <h2>Front of Card 1</h2>
-                                <button class="flip-button" onclick="flipCard(this)">Flip</button>
-                            </div>
-                            <div class="back">
-                                <h2>Back of Card 1</h2>
-                                <button class="flip-button" onclick="flipCard(this)">Flip</button>
-                            </div>
+    <main>
+        <div class="container" id="navbar"> <!-- Container for the main content -->
+            <section class="section">
+                <!-- Content for the first section goes here -->
+                <div class="flashcard-container"> <!-- Container for flashcards -->
+                    <div class="flashcard"> <!-- Individual flashcard -->
+                        <div class="front"> <!-- Front side of the flashcard -->
+                            <h2>Front of Card 1</h2> <!-- Content for the front side -->
+                            <button class="flip-button" onclick="flipCard(this)">Flip</button> <!-- Button to flip the card -->
                         </div>
-                        
+                        <div class="back"> <!-- Back side of the flashcard -->
+                            <h2>Back of Card 1</h2> <!-- Content for the back side -->
+                            <button class="flip-button" onclick="flipCard(this)">Flip</button> <!-- Button to flip the card -->
+                        </div>
                     </div>
-                    </div>
-                    <button id="prevBtn">Previous</button>
-                    <button id="nextBtn">Next</button>
-                </section>
-                <section class="section">
-                    <!-- Content for the second section goes here -->
-                </section>
-                <section class="section">
-                   <!-- Content for the third section goes here -->
-                </section>
-            </div>
-        </main>
-        
-        
-        
-        <!-- Including the JavaScript file using Django template syntax -->
-        
-    </body>
-</html>
+                </div>
+                <button id="prevBtn">Previous</button> <!-- Button to navigate to the previous flashcard -->
+                <button id="nextBtn">Next</button> <!-- Button to navigate to the next flashcard -->
+            </section>
+            <section class="section">
+                <!-- Content for the second section goes here -->
+            </section>
+            <section class="section">
+                <!-- Content for the third section goes here -->
+            </section>
+        </div>
+    </main>
+</body>
 
-{% endblock %}
+{% endblock %} <!-- End of the block that will be inserted into the base layout -->

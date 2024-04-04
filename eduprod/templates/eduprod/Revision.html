@@ -1,74 +1,62 @@
-{% extends "eduprod/layout.html" %}
-{% load static %}
-{% block body %}
+{% extends "eduprod/layout.html" %} <!-- Extends the base layout from "eduprod/layout.html" -->
+{% load static %} <!-- Load the static files tag from Django -->
+{% block body %} <!-- Start of the block that will be inserted into the base layout -->
 
+<link href="{% static 'eduprod/styles.css' %}" rel="stylesheet"> <!-- Link to the CSS stylesheet -->
+<script src="{% static 'eduprod/test.js' %}" defer></script> <!-- Link to the JavaScript file with defer attribute -->
 
-    <link href="{% static 'eduprod/styles.css' %}" rel="stylesheet">
-    <script src="{% static 'eduprod/test.js' %}" defer></script>
-
-        <main>
-            <div class="container" id="navbar"> <!-- Container for the main content -->
-                <section class="section">
-                    <!-- Content for the first section goes here -->
-                    <div class="flashcard-container">
-                        <div class="flashcard">
-                            <div class="front">
-                                <h2>Welcome to Revision</h2>
-                                <button class="flip-button" onclick="flipCard(this)">Click to begin</button>
-                            </div>
-                            <div class="back">
-                                <h2>Phonetic Alphabet</h2>
-                                <button id="startQuiz"onclick="startQuiz()">Start</button>
-                                <div id="quiz-container" style="display:none;">
-                                    {% for question in questions %}
-                                        <div class="question">
-                                            <p><strong>Question:</strong> {{ question.text }}</p>
-                                            <button onclick="showAnswer(this)">Show Answer</button>
-                                            <p class="answer" style="display:none;"><strong>Answer:</strong> {{ question.answer }}</p>
-                                        </div>
-                                    {% endfor %}
-                            </div>
+<main>
+    <div class="container" id="navbar"> <!-- Container for the main content -->
+        <section class="section">
+            <!-- Content for the first section goes here -->
+            <div class="flashcard-container"> <!-- Container for flashcards -->
+                <div class="flashcard"> <!-- Individual flashcard -->
+                    <div class="front"> <!-- Front side of the flashcard -->
+                        <h2>Welcome to Revision</h2> <!-- Title for the front side -->
+                        <button class="flip-button" onclick="flipCard(this)">Click to begin</button> <!-- Button to flip the card -->
+                    </div>
+                    <div class="back"> <!-- Back side of the flashcard -->
+                        <h2>Phonetic Alphabet</h2> <!-- Title for the back side -->
+                        <button id="startQuiz" onclick="startQuiz()">Start</button> <!-- Button to start the quiz -->
+                        <div id="quiz-container" style="display:none;"> <!-- Container for the quiz questions -->
+                            {% for question in questions %} <!-- Loop through each question -->
+                                <div class="question"> <!-- Individual question -->
+                                    <p><strong>Question:</strong> {{ question.text }}</p> <!-- Question text -->
+                                    <button onclick="showAnswer(this)">Show Answer</button> <!-- Button to show the answer -->
+                                    <p class="answer" style="display:none;"><strong>Answer:</strong> {{ question.answer }}</p> <!-- Answer text -->
+                                </div>
+                            {% endfor %}
                         </div>
-                        <body>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
 
-                            
-                        </body>
-                    </div>
-                    </div>
-                    <script>
-                        var currentQuestionIndex = 0;
-                        var questions = document.getElementsByClassName('question');
+<script>
+    var currentQuestionIndex = 0; // Index to track the current question
+    var questions = document.getElementsByClassName('question'); // Array of question elements
 
     function startQuiz() {
-        document.querySelector('.flashcard').style.display = 'none';
-        document.getElementById('quiz-container').style.display = 'block';
-        showCurrentQuestion();
+        document.querySelector('.flashcard').style.display = 'none'; // Hide the flashcard
+        document.getElementById('quiz-container').style.display = 'block'; // Show the quiz container
+        showCurrentQuestion(); // Show the first question
     }
 
     function showCurrentQuestion() {
-        if (currentQuestionIndex < questions.length) {
-            questions[currentQuestionIndex].style.display = 'block';
+        if (currentQuestionIndex < questions.length) { // Check if there are more questions
+            questions[currentQuestionIndex].style.display = 'block'; // Show the current question
         } else {
-            alert('Quiz finished!!!!');
+            alert('Quiz finished!!!!'); // Alert when the quiz is finished
         }
     }
 
     function showAnswer(button) {
-        var answer = button.nextElementSibling;
-        answer.style.display = 'block';
-        button.style.display = 'none';
+        var answer = button.nextElementSibling; // Get the answer element
+        answer.style.display = 'block'; // Show the answer
+        button.style.display = 'none'; // Hide the button
     }
-                    </script>
-                  
-            </div>
-        </main>
-        
-            
-     
-        
-        <!-- Including the JavaScript file using Django template syntax -->
-        
-    </body>
-</html>
-{% endblock %}
+</script>
 
+{% endblock %} <!-- End of the block that will be inserted into the base layout -->

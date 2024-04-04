@@ -1,64 +1,49 @@
-{% load static %}
+{% load static %} <!-- Load the static files tag from Django -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <link href="{% static 'eduprod/content.css' %}" rel="stylesheet">
+    <link href="{% static 'eduprod/content.css' %}" rel="stylesheet"> <!-- Link to the CSS stylesheet -->
 </head>
 <body>
     <header>
         <div class="container"> <!-- Container for the header content -->
             <img src="your-logo.png" alt="Your Logo" class="logo"> <!-- Logo image -->
         </div>
-    
-    <nav>
-        <ul>
-            <li><a href="{% url 'eduprod:Home'%}">Home</a></li>
-            <li class="dropdown">
-                
-                <button class="dropbtn">Content
-                  </button>
-                  <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                  </div>
+
+        <nav>
+            <ul>
+                <li><a href="{% url 'eduprod:Home' %}">Home</a></li> <!-- Navigation link to the Home page -->
+                <li class="dropdown">
+                    <button class="dropbtn">Content</button> <!-- Dropdown button for Content -->
+                    <div class="dropdown-content"> <!-- Dropdown content -->
+                        <a href="#">Link 1</a> <!-- Link within the dropdown -->
+                        <a href="#">Link 2</a> <!-- Link within the dropdown -->
+                        <a href="#">Link 3</a> <!-- Link within the dropdown -->
+                    </div>
                 </li>
-                 <li><a href="{% url 'eduprod:Revision' %}">Revision</a></li>
-                 <li><a href="{% url 'eduprod:Quiz' %}">Quiz</a></li>
-                 <li><a href="{% url 'login' %}">Logout</a></li>  
-                 <li><a href="{% url 'users:login' %}" style="position: absolute; top: 67.5px; right: 0; margin: 0px;" id="logout">{{ request.user.username }} - Logout</a></li>  
-         </ul>
+                <li><a href="{% url 'eduprod:Revision' %}">Revision</a></li> <!-- Navigation link to the Revision page -->
+                <li><a href="{% url 'eduprod:Quiz' %}">Quiz</a></li> <!-- Navigation link to the Quiz page -->
+                <li><a href="{% url 'login' %}">Logout</a></li> <!-- Navigation link to the Logout page -->
+                <li><a href="{% url 'users:login' %}" style="position: absolute; top: 67.5px; right: 0; margin: 0px;" id="logout">{{ request.user.username }} - Logout</a></li> <!-- Logout link with the username displayed -->
+            </ul>
+        </nav>
+    </header>
 
-    </nav>
-</header>
-
-    {% block body %}`
+    {% block body %} <!-- Block for the body content -->
     {% endblock %}
 
-            
     <footer>
         <div class="container"> <!-- Container for the footer content -->
             <a href="#" class="button">Contact Us</a> <!-- Button for contact -->
         </div>
         <div class="footer-content">
-            <p>&copy; 2024 PHSACU </p>
+            <p>&copy; 2024 PHSACU </p> <!-- Footer copyright text -->
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Revision</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Home</a></li> <!-- Footer navigation link to Home -->
+                <li><a href="#">Revision</a></li> <!-- Footer navigation link to Revision -->
+                <li><a href="#">Contact</a></li> <!-- Footer navigation link to Contact -->
             </ul>
         </div>
-        
     </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-   

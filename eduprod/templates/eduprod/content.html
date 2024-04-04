@@ -1,69 +1,60 @@
-{%load static%}                
+{% load static %} <!-- Load the static files tag from Django -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>3-Section Webpage</title>
-    <link href="{% static 'eduprod/content.css' %}" rel="stylesheet">
-    
-    </head>
-       <header>
-            <div class="container"> <!-- Container for the header content -->
-              </div> 
-        
-        <nav>
-            <ul>
-                <li><a href="{% url 'eduprod:Home'%}">Home</a></li>
-                <li class="dropdown">
-                    
-                    <button class="dropbtn">Content 
-                      </button>
-                      <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                      </div>
-                    </li>
-                     <li><a href="{% url 'eduprod:Revision' %}">Revision</a></li>
-                     <li><a href="#">Results</a></li>
-                     <li><a href="{% url 'login' %}">Logout</a></li>    
-             </ul>
-        </nav>
-    </header>
-        <main>
-            <div class="container" id="navbar"> <!-- Container for the main content -->
-                <section class="section">
+    <link href="{% static 'eduprod/content.css' %}" rel="stylesheet"> <!-- Link to the CSS stylesheet -->
+</head>
+<header>
+    <div class="container"> <!-- Container for the header content -->
+    </div>
 
-                        </section>
-                   </div>  
-                      
-                </section>
+    <nav>
+        <ul>
+            <li><a href="{% url 'eduprod:Home' %}">Home</a></li> <!-- Navigation link to the Home page -->
+            <li class="dropdown">
+                <button class="dropbtn">Content</button> <!-- Dropdown button for Content -->
+                <div class="dropdown-content"> <!-- Dropdown content -->
+                    <a href="#">Link 1</a> <!-- Link within the dropdown -->
+                    <a href="#">Link 2</a> <!-- Link within the dropdown -->
+                    <a href="#">Link 3</a> <!-- Link within the dropdown -->
+                </div>
+            </li>
+            <li><a href="{% url 'eduprod:Revision' %}">Revision</a></li> <!-- Navigation link to the Revision page -->
+            <li><a href="#">Results</a></li> <!-- Navigation link to the Results page -->
+            <li><a href="{% url 'login' %}">Logout</a></li> <!-- Navigation link to the Logout page -->
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="container" id="navbar"> <!-- Container for the main content -->
+        <section class="section">
+            <!-- Content for the first section goes here -->
+        </section>
+        <section class="section">
+            <div class="text-box">
                 <section class="section">
-                    <div class="text-box"> 
-                        <section class="section">
-                                <h2>Phonetic Alphabet</h2>
-                                <p>A- ALPHA</p><!-- Content for the second section goes here -->
-                </section>
-                <section class="section">
-                   <!-- Content for the third section goes here -->
+                    <h2>Phonetic Alphabet</h2> <!-- Title for the section -->
+                    <p>A- ALPHA</p> <!-- Content for the second section goes here -->
                 </section>
             </div>
-        </main>
-        
-        <footer>
-            <div class="container"> <!-- Container for the footer content -->
-                <a href="#" class="button">Contact Us</a> <!-- Button for contact -->
-            </div>
-            <div class="footer-content">
-                <p>&copy; 2024 TPHSACU </p>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Revision</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            
-        </footer>
-                
-        
-        <!-- Including the JavaScript file using Django template syntax -->
-   
+        </section>
+        <section class="section">
+            <!-- Content for the third section goes here -->
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container"> <!-- Container for the footer content -->
+        <a href="#" class="button">Contact Us</a> <!-- Button for contact -->
+    </div>
+    <div class="footer-content">
+        <p>&copy; 2024 TPHSACU</p> <!-- Footer copyright text -->
+        <ul>
+            <li><a href="#">Home</a></li> <!-- Footer navigation link to Home -->
+            <li><a href="#">Revision</a></li> <!-- Footer navigation link to Revision -->
+            <li><a href="#">Contact</a></li> <!-- Footer navigation link to Contact -->
+        </ul>
+    </div>
+</footer>
